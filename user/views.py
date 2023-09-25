@@ -27,7 +27,8 @@ class ManageUserView(generics.RetrieveAPIView):
 class UserRoleView(APIView):
     authentication_classes = [authentication.TokenAuthentication]
     permission_classes = [permissions.IsAuthenticated]
-
+    serializer_class = UserSerializer
+    
     def get(self, request):
         id = request.user.id
         role = request.user.role  

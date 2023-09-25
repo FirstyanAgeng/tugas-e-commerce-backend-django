@@ -12,9 +12,8 @@ urlpatterns = [
     path('api/schema', SpectacularAPIView.as_view(), name='api-schema'),
     path('api/docs', SpectacularSwaggerView.as_view(url_name='api-schema'), name='api-docs'),
     path('api/user/', include('user.urls'), name='user'),
+    path('api/product/', include('product.urls'), name='product'),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-    path('api/product/', include('product.urls'), name='product'),
-
     # path('api/product', include('product.urls'), name='product')
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
